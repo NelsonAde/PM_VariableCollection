@@ -1,0 +1,285 @@
+{
+	"info": {
+		"_postman_id": "7dcf2476-b666-463e-8348-24383c342576",
+		"name": "Variables",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21085206"
+	},
+	"item": [
+		{
+			"name": "Req1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"var expectedData = [     \r",
+							"        {\r",
+							"            \"id\": 1,\r",
+							"            \"email\": \"george.bluth@reqres.in\",\r",
+							"            \"first_name\": \"George\",\r",
+							"            \"last_name\": \"Bluth\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/1-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 2,\r",
+							"            \"email\": \"janet.weaver@reqres.in\",\r",
+							"            \"first_name\": \"Janet\",\r",
+							"            \"last_name\": \"Weaver\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 3,\r",
+							"            \"email\": \"emma.wong@reqres.in\",\r",
+							"            \"first_name\": \"Emma\",\r",
+							"            \"last_name\": \"Wong\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/3-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 4,\r",
+							"            \"email\": \"eve.holt@reqres.in\",\r",
+							"            \"first_name\": \"Eve\",\r",
+							"            \"last_name\": \"Holt\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/4-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 5,\r",
+							"            \"email\": \"charles.morris@reqres.in\",\r",
+							"            \"first_name\": \"Charles\",\r",
+							"            \"last_name\": \"Morris\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/5-image.jpg\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 6,\r",
+							"            \"email\": \"tracey.ramos@reqres.in\",\r",
+							"            \"first_name\": \"Tracey\",\r",
+							"            \"last_name\": \"Ramos\",\r",
+							"            \"avatar\": \"https://reqres.in/img/faces/6-image.jpg\"\r",
+							"        }\r",
+							"]\r",
+							"\r",
+							"const IDs = expectedData.map(element => element.id);\r",
+							"const Emails = expectedData.map(element => element.email);\r",
+							"const FirstNames = expectedData.map(element => element.first_name);\r",
+							"const LastNames = expectedData.map(element => element.last_name);\r",
+							"const Avatars = expectedData.map(element => element.avatar);\r",
+							"\r",
+							"// console.log(responseBody.data[0].first_name);\r",
+							"console.log(IDs);\r",
+							"\r",
+							"// for (let i = 0; i < expectedData.length; i++) {\r",
+							"//     console.log(responseBody.data[i].email);\r",
+							"//     console.log(Emails[i]);\r",
+							"\r",
+							"//     pm.test(\"Verify ID's are matched \", function () {\r",
+							"//         pm.expect(responseBody.data[i].id).to.eql(IDs[i]);\r",
+							"//     });\r",
+							"\r",
+							"//     pm.test(\"Verify emails are matched \", function () {\r",
+							"//         pm.expect(responseBody.data[i].email).to.eql(Emails[i]);\r",
+							"//     });\r",
+							"\r",
+							"//     pm.test(\"Verify FirstNames are matched \", function () {\r",
+							"//         pm.expect(responseBody.data[i].first_name).to.eql(FirstNames[i]);\r",
+							"//     });\r",
+							"\r",
+							"//     pm.test(\"Verify LastNames are matched \", function () {\r",
+							"//         pm.expect(responseBody.data[i].last_name).to.eql(LastNames[i]);\r",
+							"//     });\r",
+							"\r",
+							"//     pm.test(\"Verify Avatars are matched \", function () {\r",
+							"//         pm.expect(responseBody.data[i].avatar).to.eql(Avatars[i]);\r",
+							"//     });\r",
+							"// }"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{Username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{Password}}",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users?page=1",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Req1 Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{Username}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{Password}}",
+							"type": "string"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL_Collection_01}}",
+					"host": [
+						"{{URL_Collection_01}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Req2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code should be 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    // pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+							"\r",
+							"});\r",
+							"\r",
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test to check if the status is success\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+							"    pm.expect(responseBody.status).to.eql(\"success\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify the id in the response body\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"data\");\r",
+							"    pm.expect(responseBody.data.id).to.eql(1);\r",
+							"});\r",
+							"\r",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL_01}}",
+					"host": [
+						"{{URL_01}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Req3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_TEST",
+			"value": "https://dummy.restapiexample.com/api/v1/employees",
+			"type": "string"
+		}
+	]
+}
